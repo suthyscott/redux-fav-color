@@ -7,6 +7,7 @@ const Home = () => {
   const handleChangeColor = () => {
     navigate('/')
   }
+  
   return (
     <main>
       <h2>Your favorite color is below:</h2>
