@@ -21,4 +21,6 @@ console.log(favColorSlice)
 
 export const {setColor, clearColor} = favColorSlice.actions
 
+export const selectFavColor = state => state.favColor.value
+
 export default favColorSlice.reducer

@@ -1,8 +1,8 @@
-import {configureStore} from '@reduxjs/toolkit'
-import favColorSliceReducer from './slices/favColorSlice'
+import { configureStore } from "@reduxjs/toolkit"
+import favColorSliceReducer from "./slices/favColorSlice"
 
 const store = configureStore({
-    reducer: {favColor: favColorSliceReducer}
+    reducer: { favColor: favColorSliceReducer }
 })
 
 export default store
