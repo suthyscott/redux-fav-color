@@ -1,13 +1,16 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
 
 const Landing = () => {
     const [color, setColor] = useState("")
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const submitHandler = e => {
       e.preventDefault()
-
+      //set the color as the favColor on redux
+      dispatch({type: "SET_COLOR", payload: color})
       navigate('/home')
     }
 
