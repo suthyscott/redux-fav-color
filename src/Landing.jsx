@@ -1,16 +1,19 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { setColor as setGlobalColor} from "./store/slices/favColorSlice"
+import { setFlavor as setGlobalFlavor } from "./store/slices/favFlavorSlice"
 import { useDispatch } from "react-redux"
 
 const Landing = () => {
     const [color, setColor] = useState("")
+    const [flavor, setFlavor] = useState('')
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const submitHandler = e => {
       e.preventDefault()
       dispatch(setGlobalColor(color))
+      dispatch(setGlobalFlavor(flavor))
       navigate('/home')
     }
 
@@ -21,6 +24,11 @@ const Landing = () => {
                 placeholder="Enter your favorite color"
                 onChange={e => setColor(e.target.value)}
             />
+            <input
+                placeholder="Enter your favorite flavor of ice cream"
+                onChange={e => setFlavor(e.target.value)}
+            />
+            <button type="submit">Submit</button>
         </form>
     )
 }
