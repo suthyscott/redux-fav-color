@@ -1,13 +1,16 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { setColor as setGlobalColor} from "./store/slices/favColorSlice"
+import { useDispatch } from "react-redux"
 
 const Landing = () => {
     const [color, setColor] = useState("")
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const submitHandler = e => {
       e.preventDefault()
-
+      dispatch(setGlobalColor(color))
       navigate('/home')
     }
 
